@@ -1,0 +1,755 @@
+@font-face {
+    font-family: 'outfit-regular';
+    src: url('../font/outfit/Outfit-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'outfit-medium';
+    src: url('../font/outfit/Outfit-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'outfit-semibold';
+    src: url('../font/outfit/Outfit-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'outfit-bold';
+    src: url('../font/outfit/Outfit-Bold.ttf') format('truetype');
+}
+
+:root {
+    --color-black: #212121 !important;
+    --color-black-opacity: #646464 !important;
+    --color-white: #f7f7f7 !important;
+    --color-orange: #EC9B3B !important;
+    --color-orange-opacity: #FBEBD8 !important;
+    --font-regular: 'outfit-regular', Arial, Helvetica, sans-serif !important;
+    --font-medium: 'outfit-medium', Arial, Helvetica, sans-serif !important;
+    --font-semibold: 'outfit-semibold', Arial, Helvetica, sans-serif !important;
+    --font-bold: 'outfit-bold', Arial, Helvetica, sans-serif !important;
+    --size-headline: 5rem !important;
+    --size-h1: 2rem !important;
+    --size-h2: 1.6rem !important;
+    --size-h3: 1.25rem !important;
+    --size-paragraph: 1rem !important;
+    --transition-attr: 0.3s;
+}
+
+
+/* BUNDLE */
+/* * {
+    font-family: var(--font-regular);
+    font-size: var(--size-paragraph);
+    color: var(--color-black);
+    box-sizing: border-box;
+} */
+
+
+@import  url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+    --color-black: #212121;
+    --color-white: #f7f7f7;
+    --color-gray: #DEDCD3;
+    --color-yellow: #EC9B3B;
+}
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+.row {
+    height: 100vh;
+}
+
+.signin {
+    background-image: url(../img/signin-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.signin .line {
+    text-align: right;
+}
+
+.signin .line {
+    border-bottom: 2px solid var(--color-yellow);
+    display: inline-block;
+    position: relative;
+    height: max-content;
+    width: 90px;
+}
+
+.signin .sub-title {
+    font-size: 1.5rem;
+    color: var(--color-yellow);
+    /* color: green; */
+    font-weight: 400;
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 170%;
+    transform: translate(-50%, -50%);
+}
+
+.signin .headline {
+    font-size: 4rem;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.signin .card-form {
+    width: 70%;
+    background-color: rgba(255,255,255,0.19);
+    backdrop-filter: blur(6px);
+    border-radius: 1rem;
+    padding: 60px;
+}
+
+.signin .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin .card-form .title {
+    font-size: 2rem;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.signin .card-form .input-email,
+.signin .card-form .input-password {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--color-gray);
+    color: var(--color-white);
+    padding-bottom: 0.2rem;
+}
+
+.signin .card-form .input-email:hover,
+.signin .card-form .input-password:hover,
+.signin .card-form .input-email:focus,
+.signin .card-form .input-password:focus {
+    border-bottom: 2px solid var(--color-white);
+}
+
+.signin .card-form .input-email:not(:placeholder-shown).input-email:not(:focus),
+.signin .card-form .input-password:not(:placeholder-shown).input-password:not(:focus) {
+    border-bottom: 2px solid var(--color-white);
+}
+
+.signin .card-form .input-email:hover::placeholder,
+.signin .card-form .input-password:hover::placeholder,
+.signin .card-form .input-email:focus::placeholder,
+.signin .card-form .input-password:focus::placeholder {
+    color: var(--color-white);
+}
+
+.signin .card-form .input-email::placeholder,
+.signin .card-form .input-password::placeholder {
+    color: var(--color-gray);
+}
+
+.signin .card-form .remember input[type="checkbox"] {
+    display: none
+}
+
+.signin .card-form .remember input[type="checkbox"] + label {
+    padding-left: 1.8rem;
+    position: relative;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.signin .card-form .remember input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--color-gray);
+    border-radius: 2px;
+    transition: border 0.1s;
+}
+
+.signin .card-form .remember input[type="checkbox"]:hover + label::before {
+    border: 2px solid var(--color-white);
+}
+
+.signin .card-form .remember input[type="checkbox"]:checked + label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--color-yellow);
+    border-radius: 2px;
+}
+
+.signin .card-form .remember input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../img/check.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+}
+
+.signin .card-form .reset-pass a {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-yellow);
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+.signin .card-form .reset-pass a:hover {
+    color: #DD9B4A;
+}
+
+.signin .card-form button {
+    background-color: var(--color-yellow);
+    border: none;
+    display: inline-block;
+    color: var(--color-white);
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    border-radius: 3px;
+    transition: opacity 0.1s;
+}
+
+.signin .card-form button:hover {
+    opacity: 0.9;
+}
+
+.signin .card-form .caption {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-white);
+    margin: auto;
+}
+
+.signin .card-form .caption .signup {
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--color-yellow);
+    transition: color 0.1s;
+}
+
+.signin .card-form .caption .signup:hover {
+    color: #DD9B4A;
+}
+
+.signin .card-form .input-email,
+.signin .card-form .other,
+.signin .card-form button {
+    margin-bottom: 36px;
+}
+
+.signin .card-form .input-password{
+    margin-bottom: 13px;
+}
+
+
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-reverse {
+    background-color: var(--color-orange-opacity) !important;
+}
+
+.highlight {
+    font-size: var(--size-h2);
+    color: var(--color-orange) !important;
+}
+
+.button {
+    padding: 8px 32px;
+    text-decoration: none;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: 0.7px solid var(--color-orange);
+    border-radius: 3px;
+    transition: var(--transition-attr);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--color-orange);
+}
+
+.button.reverse {
+    background-color: transparent;
+    border: 0.7px solid var(--color-orange);
+    color: var(--color-orange);
+}
+
+.button.reverse:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.sub-title {
+    font-size: var(--size-h3);
+    color: var(--color-orange);
+}
+
+.title {
+    font-size: var(--size-h1);
+    color: var(--color-black) !important;
+    font-family: var(--font-medium);
+}
+
+div.highlight {
+    font-family: var(--font-medium) !important;
+    font-size: var(--size-title);
+}
+
+p {
+    font-size: var(--size-paragraph);
+    color: var(--color-black-opacity);
+}
+
+
+/* NAVBAR */
+nav.navbar {
+    /* background-color: transparent; */
+    background-color: var(--color-black) !important;
+    display: none;
+}
+
+.navbar-brand span{
+    color: var(--color-white);
+    font-size: var(--size-h2);
+}
+
+.navbar-brand span .highlight {
+    color: var(--color-orange);
+}
+
+.nav-item:hover > .nav-link {
+    opacity: 1;
+    color: var(--color-white);
+    transition: var(--transition-attr);
+}
+
+.nav-link {
+    color: var(--color-white);
+    opacity: 0.6;
+}
+
+
+/* LOGIN */
+.signin {
+    background-color: black;
+}
+
+.signin h1 {
+    color: #EC9B3B !important;
+}
+
+
+/* HOME */
+.home {
+    width: 100%;
+    height: 100vh;
+}
+
+.home.mobile-view {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/home-hero-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-caption {
+    transform: translateY(-50%);
+    top: 50% !important;
+}
+
+.carousel-caption h1 {
+    font-size: var(--size-headline);
+    color: var(--color-white);
+    font-family: var(--font-semibold);
+}
+
+.carousel-caption p {
+    font-size: var(--size-h3);
+    color: var(--color-orange);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    left: 6%;
+    bottom: auto !important;
+    width: auto;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    background-color: rgba(255,255,255,0.3);
+}
+
+.carousel-control-next {
+    left: auto;
+    right: 6%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 80%;
+}
+
+
+/* FEATURED */
+.card-featured {
+    background-color: var(--color-white);
+}
+
+.card-featured i {
+    font-size: 3rem;
+    color: var(--color-orange);
+}
+
+.card-featured .title {
+    font-size: var(--size-h3);
+    font-family: var(--font-medium);
+    color: var(--color-black);
+}
+
+
+/* POPULAR */
+.popular .card-destination .card-description .name {
+    font-size: var(--size-h2);
+}
+
+.popular .card-destination .card-description .review {
+    font-size: var(--size-h3);
+    font-family: var(--font-medium);
+}
+
+.popular .card-destination .card-description .review i {
+    color: var(--color-orange);
+    font-size: 1.2rem;
+}
+
+.popular .card-destination .card-description .price {
+    font-size: var(--size-h1);
+    font-family: var(--font-bold);
+}
+
+
+/* TESTIMONI */
+.testimoni .card-testimoni {
+    background-color: var(--color-white);
+}
+
+.testimoni .card-testimoni .img-testimoni {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.testimoni .card-testimoni .comment .name {
+    font-family: var(--font-medium);
+}
+
+
+/* CONTACT */
+.contact .contact-information {
+    border: 1px solid rgba(0,0,0,0.26);
+}
+
+.contact .contact-information .name {
+    font-size: var(--size-h3) !important;
+    font-family: var(--font-medium);
+}
+
+
+/* DESTINATION */
+/* SEARCHING */
+.searching .button:hover > i.fa-magnifying-glass {
+    color: var(--color-white) !important;
+}
+
+
+/* CATEGORIES */
+.categories .card-category {
+    border-bottom: 0.7px solid rgba(0,0,0,0.3);
+}
+
+.categories .list-category {
+    list-style: none;
+}
+
+.categories .item {
+    transition: var(--transition-attr);
+}
+
+.categories .item:hover > li {
+    color: var(--color-black);
+}
+
+.categories .list-category li {
+    font-size: 0.9rem !important;
+    color: var(--color-black-opacity);
+}
+
+.categories .result {
+    font-size: 0.9rem;
+    color: var(--color-black-opacity);
+}
+
+
+/* DESTINATION */
+.card-destination {
+    border: 1.3px solid rgba(0,0,0,0.2);
+}
+
+div.destination .name {
+    font-size: var(--size-h2) !important;
+    font-family: var(--font-medium) !important;
+    color: var(--color-black) !important;
+}
+
+div.destination .review i,
+div.destination .location i {
+    color: var(--color-orange) !important;
+}
+
+div.destination .review {
+    font-size: var(--size-h3) !important;
+    font-family: var(--font-semibold) !important;
+}
+
+div.destination .location {
+    font-size: var(--size-paragraph) !important;
+    color: var(--color-black-opacity) !important;
+}
+
+div.destination .price {
+    font-size: var(--size-h1) !important;
+    color: var(--color-black) !important;
+    font-family: var(--font-bold) !important;
+}
+
+div.destination .price .caption {
+    color: var(--color-black-opacity) !important;
+}
+
+
+/* FOOTER */
+footer {
+    margin-top: 130px !important;
+    padding: 60px 0;
+    background-color: var(--color-black);
+    color: var(--color-white) !important;
+}
+
+.brand h3,
+.brand h3 .highlight {
+    font-family: var(--font-semibold);
+}
+
+.brand h3,
+.brand p {
+    color: var(--color-white) !important;
+}
+
+.brand .copyright small {
+    color: var(--color-black-opacity) !important;
+}
+
+.links h3 {
+    color: var(--color-white);
+    font-family: var(--font-medium);
+    font-size: var(--size-h2);
+}
+
+.links .link-items {
+    list-style: none;
+}
+
+.links .link-items .item {
+    transition: var(--transition-attr);
+    font-family: var(--font-regular) !important;
+}
+
+.links .link-items .item:hover {
+    opacity: 0.8;
+}
+
+.links .link-items li {
+    color: var(--color-white);
+}
+
+
+/* DETAIL */
+/* DESCRIPTION */
+.description .name {
+    font-size: var(--size-h1);
+    color: var(--color-black);
+    font-family: var(--font-medium);
+}
+
+.description h6 {
+    color: var(--color-black);
+    font-size: var(--size-h3);
+}
+
+.description h6 i {
+    font-size: 1.3rem;
+    color: var(--color-orange) !important;
+}
+
+.description .location .time {
+    color: var(--color-black-opacity);
+}
+
+.description .title {
+    border-left: 4px solid var(--color-orange);
+    border-radius: 3px;
+}
+
+.description h3 {
+    font-size: var(--size-h3) !important;
+    font-family: var(--font-medium);
+}
+
+.description .wrap .review {
+    font-size: var(--size-h3) !important;
+}
+
+.description .wrap .review i {
+    font-size: 1.3rem;
+    color: var(--color-orange);
+}
+
+.description .card-order {
+    border: 1px solid rgba(0,0,0,0.26);
+}
+
+.description .card-order .caption,
+.description .card-order .transaction {
+    font-size: var(--size-h3);
+}
+
+.description .card-order .caption {
+    font-family: var(--font-medium);
+    color: var(--color-black-opacity);
+}
+
+.description .card-order .transaction {
+    color: var(--color-orange);
+}
+
+.description .card-order .price {
+    font-size: var(--size-h1);
+    font-family: var(--font-medium);
+    color: var(--color-orange);
+}
+
+.description .card-destination .name {
+    font-size: var(--size-h2);
+    color: var(--color-black);
+    font-family: var(--font-medium);
+}
+
+.description .card-destination .review,
+.description .card-destination .review i {
+    font-size: var(--size-h3);
+}
+
+.description .card-destination .review {
+    font-family: var(--font-medium);
+}
+
+.description .card-destination .review i {
+    color: var(--color-orange);
+}
+
+.description .card-destination h3,
+.description .card-destination h3 i {
+    font-size: var(--size-h3);
+}
+
+.description .card-destination h3 i {
+    color: var(--color-orange);
+}
+
+.description .card-description .price {
+    font-family: var(--font-medium);
+}
+
+.description .card-description .price small {
+    font-size: var(--size-paragraph);
+    color: var(--color-black-opacity);
+}
+
+
+
+
+@media (max-width: 769px) {
+    nav.navbar {
+        background-color: var(--color-black);
+    }
+
+    .carousel-caption h1 {
+        font-size: 4.3rem;
+    }
+
+    .categories select {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 3.3rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .categories select {
+        width: 50%;
+    }
+}
