@@ -348,7 +348,6 @@ p {
 nav.navbar {
     /* background-color: transparent; */
     background-color: var(--color-black) !important;
-    display: none;
 }
 
 .navbar-brand span{
