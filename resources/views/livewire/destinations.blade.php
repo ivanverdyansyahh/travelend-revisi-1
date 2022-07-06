@@ -38,7 +38,7 @@
                         @endforeach
                     </select>
                     <ul class="list-category d-flex flex-row p-0 m-0 d-none d-lg-block">
-                        <a href="#" class="item d-inline-block text-decoration-none p-3">
+                        <a href="/destinations" class="item d-inline-block text-decoration-none p-3">
                             <li class="{{ !request('category') ? 'text-dark' : '' }}">All destinations</li>
                         </a>
                         @foreach ($categories as $category)
@@ -124,6 +124,7 @@
             </div>
         </div>
     </div>
+
     {{-- END BUTTON LOAD --}}
     @include('partials.footer')
 </div>

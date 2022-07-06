@@ -20,7 +20,7 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">Let's Make Your Best Trip With Us</h1>
-                                <a href="#" class="button d-inline-block text-decoration-none">Explore Now</a>
+                                <a href="/destinations" class="button d-inline-block text-decoration-none">Explore Now</a>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -28,7 +28,7 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">The Best Places Are Waiting For You</h1>
-                                <a href="#" class="button d-inline-block text-decoration-none">Explore Now</a>
+                                <a href="/destinations" class="button d-inline-block text-decoration-none">Explore Now</a>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -36,7 +36,7 @@
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">Travel Beautiful Land For Adventure</h1>
-                                <a href="#" class="button d-inline-block text-decoration-none">Explore Now</a>
+                                <a href="/destinations" class="button d-inline-block text-decoration-none">Explore Now</a>
                             </div>
                         </div>
                     </div>
