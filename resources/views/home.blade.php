@@ -1,10 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
+    @include('partials.navbar')
 
-@include('partials.navbar')
-
-{{-- HOME CAROUSEL --}}
+    {{-- HOME CAROUSEL --}}
     <div class="home mobile-view">
         <div class="row">
             <div class="col-12">
@@ -17,7 +16,7 @@
                 <div id="carouselExampleCaptions" class="carousel slide d-none d-lg-block" data-bs-ride="false">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="img/home-hero-1.png" class="d-block w-100" alt="img/home-hero-1">
+                            <img src="/assets/img/home-hero-1.png" class="d-block w-100" alt="/assets/img/home-hero-1">
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">Let's Make Your Best Trip With Us</h1>
@@ -25,7 +24,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/home-hero-2.png" class="d-block w-100" alt="img/home-hero-2">
+                            <img src="/assets/img/home-hero-2.png" class="d-block w-100" alt="/assets/img/home-hero-2">
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">The Best Places Are Waiting For You</h1>
@@ -33,7 +32,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="img/home-hero-3.png" class="d-block w-100" alt="img/home-hero-3">
+                            <img src="/assets/img/home-hero-3.png" class="d-block w-100" alt="/assets/img/home-hero-3">
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="mb-3">Make Your Youth Life Exciting and Fun</p>
                                 <h1 class="text-center mb-4">Travel Beautiful Land For Adventure</h1>
@@ -41,11 +40,13 @@
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -53,29 +54,38 @@
             </div>
         </div>
     </div>
-{{-- END HOME CAROUSEL --}}
+    {{-- END HOME CAROUSEL --}}
 
 
-{{-- ABOUT --}}
+    {{-- ABOUT --}}
     <section class="about">
         <div class="container">
             <div class="row justify-content-center align-items-center d-flex">
                 <div class="d-none d-lg-block col-lg-6 col-xl-5 pe-3">
-                    <img src="img/about-img.png" class="img-fluid img-about rounded shadow-lg" alt="Image About">
+                    <img src="/assets/img/about-img.png" class="img-fluid img-about rounded shadow-lg" alt="Image About">
                 </div>
                 <div class="col-12 col-lg-6 col-xl-5 ps-3 text-center text-lg-start content">
                     <h3 class="sub-title">About Us</h3>
                     <h2 class="d-inline-block title mb-4">Introduction Who's TravelWorld</h2>
-                    <img src="img/about-img.png" class="img-fluid img-about rounded shadow-lg d-block d-lg-none text-center col-5 m-auto mb-4" alt="Image About">
-                    <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna euismod et nisi. Faucibus mauris quisque massa fusce in. Risus vitae integer convallis habitasse et. Sit elit ullamcorper ullamcorper netus mauris id justo lobortis sed. Quam fringilla netus nunc euismod duis odio scelerisque fusce. Id aliquet velit eu eget donec. Commodo, pharetra, nibh sit cras mauris euismod sed at. Diam elementum est molestie commodo id est. Vulputate non, cras parturient arcu. Quis sapien sagittis sit facilisi egestas turpis mattis. Lectus turpis fringilla neque amet, tortor mi magna ac. Egestas neque enim fames tristique amet, donec arcu. Congue sed porttitor nulla nisi. Arcu fringilla eu, ridiculus nibh facilisis amet semper ultrices.</p>
+                    <img src="/assets/img/about-img.png"
+                        class="img-fluid img-about rounded shadow-lg d-block d-lg-none text-center col-5 m-auto mb-4"
+                        alt="Image About">
+                    <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna euismod et nisi.
+                        Faucibus mauris quisque massa fusce in. Risus vitae integer convallis habitasse et. Sit elit
+                        ullamcorper ullamcorper netus mauris id justo lobortis sed. Quam fringilla netus nunc euismod duis
+                        odio scelerisque fusce. Id aliquet velit eu eget donec. Commodo, pharetra, nibh sit cras mauris
+                        euismod sed at. Diam elementum est molestie commodo id est. Vulputate non, cras parturient arcu.
+                        Quis sapien sagittis sit facilisi egestas turpis mattis. Lectus turpis fringilla neque amet, tortor
+                        mi magna ac. Egestas neque enim fames tristique amet, donec arcu. Congue sed porttitor nulla nisi.
+                        Arcu fringilla eu, ridiculus nibh facilisis amet semper ultrices.</p>
                 </div>
             </div>
         </div>
     </section>
-{{-- END ABOUT --}}
+    {{-- END ABOUT --}}
 
 
-{{-- FEATURED --}}
+    {{-- FEATURED --}}
     <section class="featured section-reverse">
         <div class="container">
             <div class="row mb-4">
@@ -116,10 +126,10 @@
             </div>
         </div>
     </section>
-{{-- END FEATURED --}}
+    {{-- END FEATURED --}}
 
 
-{{-- POPULAR --}}
+    {{-- POPULAR --}}
     <section class="popular">
         <div class="container">
             <div class="row mb-4">
@@ -131,7 +141,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
                     <div class="card-destination rounded overflow-hidden">
-                        <img src="img/img-1.png" class="img-fluid" alt="img example">
+                        <img src="/assets/img/img-1.png" class="img-fluid" alt="img example">
                         <div class="card-description p-3">
                             <span class="d-flex flex-row justify-content-between align-items-center">
                                 <h2 class="name">Colorado Springs</h2>
@@ -147,7 +157,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="card-destination rounded overflow-hidden">
-                        <img src="img/img-3.png" class="img-fluid" alt="img example">
+                        <img src="/assets/img/img-3.png" class="img-fluid" alt="img example">
                         <div class="card-description p-3">
                             <span class="d-flex flex-row justify-content-between align-items-center">
                                 <h2 class="name">Havasu Falls</h2>
@@ -163,7 +173,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3 d-none d-lg-block">
                     <div class="card-destination rounded overflow-hidden">
-                        <img src="img/img-2.png" class="img-fluid" alt="img example">
+                        <img src="/assets/img/img-2.png" class="img-fluid" alt="img example">
                         <div class="card-description p-3">
                             <span class="d-flex flex-row justify-content-between align-items-center">
                                 <h2 class="name">Maldives</h2>
@@ -180,10 +190,10 @@
             </div>
         </div>
     </section>
-{{-- END POPULAR --}}
+    {{-- END POPULAR --}}
 
 
-{{-- TESTIMONI --}}
+    {{-- TESTIMONI --}}
     <section class="testimoni section-reverse">
         <div class="container">
             <div class="row mb-4">
@@ -195,27 +205,33 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
                     <div class="card-testimoni d-flex flex-row rounded p-4">
-                        <img src="img/testimonial-1.png" class="img-testimoni rounded-circle d-inline-block me-4" alt="Image Testimonial 1">
+                        <img src="/assets/img/testimonial-1.png" class="img-testimoni rounded-circle d-inline-block me-4"
+                            alt="Image Testimonial 1">
                         <div class="comment">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi egestas nisi egestas nisi.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi
+                                egestas nisi egestas nisi.</p>
                             <h6 class="name">- Tsamara Caria Azra</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <div class="card-testimoni d-flex flex-row rounded p-4">
-                        <img src="img/testimonial-2.png" class="img-testimoni rounded-circle d-inline-block me-4" alt="Image Testimonial 2">
+                        <img src="/assets/img/testimonial-2.png" class="img-testimoni rounded-circle d-inline-block me-4"
+                            alt="Image Testimonial 2">
                         <div class="comment">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi egestas nisi egestas nisi.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi
+                                egestas nisi egestas nisi.</p>
                             <h6 class="name">- Dita Levia Putri</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 d-none d-xl-block">
                     <div class="card-testimoni d-flex flex-row rounded p-4">
-                        <img src="img/testimonial-3.png" class="img-testimoni rounded-circle d-inline-block me-4" alt="Image Testimonial 3">
+                        <img src="/assets/img/testimonial-3.png" class="img-testimoni rounded-circle d-inline-block me-4"
+                            alt="Image Testimonial 3">
                         <div class="comment">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi egestas nisi egestas nisi.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis amet sem habitasse nisi
+                                egestas nisi egestas nisi.</p>
                             <h6 class="name">- Winda Caca Ashana</h6>
                         </div>
                     </div>
@@ -223,10 +239,10 @@
             </div>
         </div>
     </section>
-{{-- END TESTIMONI --}}
+    {{-- END TESTIMONI --}}
 
 
-{{-- CONTACT --}}
+    {{-- CONTACT --}}
     <section class="contact">
         <div class="container">
             <div class="row mb-4">
@@ -240,18 +256,22 @@
                     <form class="input-contact" action="">
                         <div class="d-flex flex-column flex-lg-row mb-2">
                             <div class="col-md-12 col-lg-6">
-                                <input type="name" class="form-control mb-2 mb-lg-0" id="exampleFormControlInput1" placeholder="Name">
+                                <input type="name" class="form-control mb-2 mb-lg-0" id="exampleFormControlInput1"
+                                    placeholder="Name">
                             </div>
                             <div class="col-md-12 col-lg-6 mx-0 mx-lg-1">
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Email">
                             </div>
                         </div>
                         <div class="d-flex flex-column flex-lg-row mb-2">
                             <div class="col-md-12 col-lg-6">
-                                <input type="phone" class="form-control mb-2 mb-lg-0" id="exampleFormControlInput1" placeholder="Phone">
+                                <input type="phone" class="form-control mb-2 mb-lg-0" id="exampleFormControlInput1"
+                                    placeholder="Phone">
                             </div>
                             <div class="col-md-12 col-lg-6 mx-0 mx-lg-1">
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Subject">
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Subject">
                             </div>
                         </div>
                         <div class="mb-3">
@@ -279,8 +299,7 @@
             </div>
         </div>
     </section>
-{{-- END CONTACT --}}
+    {{-- END CONTACT --}}
 
-@include('partials.footer')
-
+    @include('partials.footer')
 @endsection

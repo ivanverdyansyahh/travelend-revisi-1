@@ -1,4 +1,4 @@
-@extends('signin-page.main')
+@extends('layouts.main')
 
 @section('content')
     <section class="signin">
@@ -13,12 +13,13 @@
                 <div class="col d-flex justify-content-center align-items-center">
                     <div class="card-form d-flex flex-column">
                         <p class="title text-center">Sign In</p>
-                        <form action="" class="form">
-                            <input type="text" class="input-email" placeholder="Email">
-                            <input type="password" class="input-password" placeholder="Password">
+                        <form action="/signin" method="POST" class="form">
+                            @csrf
+                            <input type="email" name="email" class="input-email" placeholder="Email">
+                            <input type="password" name="password" class="input-password" placeholder="Password">
                             <span class="other d-flex align-items-center justify-content-between">
                                 <span class="remember">
-                                    <input type="checkbox" class="input-remember me-2" id="remember-me">
+                                    <input type="checkbox" name="remember" class="input-remember me-2" id="remember-me">
                                     <label for="remember-me" class="label-remember">Remember Me</label>
                                 </span>
                                 <span class="reset-pass">
@@ -28,7 +29,7 @@
                             <button type="submit">Sign In</button>
                         </form>
                         <p class="caption">Don't have an account?
-                            <a href="#" class="signup">Sign Up</a>
+                            <a href="/signup" class="signup">Sign Up</a>
                         </p>
                     </div>
                 </div>
