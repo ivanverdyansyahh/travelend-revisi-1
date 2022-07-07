@@ -17,15 +17,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Destination::class);
-            $table->string('name');
-            $table->string('email');
-            $table->char('no_telp', 12);
-            $table->integer('total_price');            
+            $table->foreignIdFor(Destination::class);            
+            $table->integer('current_price');
+            $table->integer('total_price');
             $table->integer('total_ticket');            
             $table->timestamps();
-
-            // $table->foreign('tour_id')->references('id')->on('tours');
         });
     }
 

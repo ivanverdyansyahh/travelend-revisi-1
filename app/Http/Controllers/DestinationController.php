@@ -40,7 +40,7 @@ class DestinationController extends Controller
     {
         $file = $request->file($request_name);
         $fileName = time() . '_' . $file->getClientOriginalName();
-        $file->move(\public_path("uploads/destinations/$folder_name/"), $fileName);
+        $file->storePubliclyAs("uploads/destinations/$folder_name/", $fileName);
 
         return [$file, $fileName];
     }
