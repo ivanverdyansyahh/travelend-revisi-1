@@ -17,7 +17,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Destination::class);            
+            $table->foreignIdFor(Destination::class);
+            $table->string('name');
+            $table->string('email');
             $table->integer('current_price');
             $table->integer('total_price');
             $table->integer('total_ticket');            

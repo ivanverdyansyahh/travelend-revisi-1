@@ -151,7 +151,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Travelid 2022</span>
+                        <span>Copyright &copy; Travelend {{ now()->year }}</span>
                     </div>
                 </div>
             </footer>
