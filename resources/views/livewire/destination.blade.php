@@ -103,17 +103,5 @@
     </div>
     {{-- END DESCRIPTION --}}
 
-
-    <div>
-        <form action="/orders" method="POST">
-            @csrf
-            <input type="hidden" name="destination_id" value="{{ $destination->id }}">
-            <input type="hidden" name="current_price" value="{{ $destination->price }}">
-
-            <input type="number" name="total_ticket">
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
     @include('partials.footer')
 </div>
