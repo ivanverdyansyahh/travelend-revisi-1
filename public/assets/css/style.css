@@ -1134,7 +1134,7 @@ nav .nav-link:hover {
     border-radius: 0px !important;
 }
 
-.detail .card-content .price {
+.detail .card-content .start-price {
     color: var(--color-white);
     font-family: 'poppins-medium', Arial, Helvetica, sans-serif;
     padding: 0.25rem 1rem;
@@ -1167,6 +1167,100 @@ nav .nav-link:hover {
     font-family: 'jost-medium', Arial, Helvetica, sans-serif;
 }
 
-.detail .stars i.bi-star-fill {
+.detail .stars i {
     color: var(--color-primary);
 }
+
+/* MODAL */
+.modal .result-group .result-price,
+.modal .result-group .result-number {
+    font-family: 'jost-semibold',Arial, Helvetica, sans-serif;
+    color: var(--color-primary);
+}
+
+.modal .minus,
+.modal .plus {
+    display: inline-block;
+    padding: 0.65rem;
+    border-radius: 50%;
+    background-color: transparent;
+    border:  1px solid var(--color-primary);
+    font-size: 0.65rem;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.modal .minus:hover,
+.modal .plus:hover {
+    background-color: var(--color-primary);
+}
+
+.modal .count-group .fa-solid.fa-minus,
+.modal .count-group .fa-solid.fa-plus {
+    margin: 0 3.3px;
+    color: var(--color-primary) !important;
+    transition: color 0.2s;
+}
+
+.modal .minus:hover > .fa-solid.fa-minus,
+.modal .plus:hover > .fa-solid.fa-plus {
+    color: var(--color-white) !important;
+}
+
+.modal .count-group .number {
+    width: 100px;
+    display: inline-block;
+    background-color: transparent;
+    height: 100%;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0 1rem;
+    font-family: 'poppins-medium';
+}
+
+.rating-group {
+    display: inline-flex;
+  }
+  
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+  
+  /* hide radio inputs */
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+  
+  /* hide 'none' input from screenreaders */
+  .rating__input--none {
+    display: none
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 1.3rem;
+  }
+  
+  /* set default star color */
+  .rating__icon--star {
+    color: orange;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+  
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }

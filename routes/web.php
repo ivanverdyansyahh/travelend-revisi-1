@@ -15,16 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::redirect('/admin', '/admin/dashboard');
-Route::middleware(['auth', 'isAdmin'])->group(function() {
-    Route::prefix('/admin')->group(function() {
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::prefix('/admin')->group(function () {
 
-        Route::controller(AdminFrontendController::class)->group(function() {
+        Route::controller(AdminFrontendController::class)->group(function () {
             Route::get('/dashboard', 'dashboardView');
             Route::get('/destinations', 'destinationsView');
             Route::get('/categories', 'categoriesView');
             Route::get('/orders', 'ordersView');
         });
-    
     });
 
     Route::resource('/destinations', DestinationController::class);
@@ -36,25 +35,24 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 });
 
 
-Route::middleware('guest')->group(function() {
+Route::middleware('guest')->group(function () {
     Route::get('/signup', Signup::class);
     Route::get('/login', Login::class)->name('login');
 
-    Route::controller(AuthController::class)->group(function() {
+    Route::controller(AuthController::class)->group(function () {
         Route::post('/signup', 'store');
         Route::post('/login', 'login');
     });
-    
 });
 
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
-Route::middleware('auth')->group(function() {    
+Route::middleware('auth')->group(function () {
     Route::get('/', Home::class)->name('home');
     Route::get('/destinations/{category_slug}/{destination_slug}', Destination::class);
     Route::get('/destinations', Destinations::class);
-    
-    Route::controller(ReviewController::class)->group(function() {
+
+    Route::controller(ReviewController::class)->group(function () {
         Route::post('/reviews', 'store');
     });
 

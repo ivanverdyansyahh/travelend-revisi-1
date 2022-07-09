@@ -1,4 +1,6 @@
-<div>
+@extends('layout.main')
+
+@section('content')
     <section class="hero">
         <div class="container">
             <div class="row">
@@ -6,9 +8,8 @@
                     <div class="card-content text-center">
                         <h5 class="fs-5 mb-2">We are here to Make your Travel Comfort</h5>
                         <h1 class="display-1 mb-2">Let's Make New Memories</h1>
-                        <p class="fs-6 w-75 m-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Praesent at consequat scelerisque urna semper. Sapien odio consectetur sed urna.</p>
-                        <a href="/destinations" class="button">Explore Now</a>
+                        <p class="fs-6 w-75 m-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at consequat scelerisque urna semper. Sapien odio consectetur sed urna.</p>
+                        <a href="#" class="button">Explore Now</a>
                     </div>
                 </div>
             </div>
@@ -23,20 +24,15 @@
                     <h1 class="display-5 title">Get Ready For Real Time Adventure</h1>
                 </div>
                 <div class="col-6 d-flex align-items-end">
-                    <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus dolor
-                        sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra velit.</p>
+                    <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus dolor sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra velit.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
-                    <img src="assets/img/img-about-1.jpg" class="img-fluid img-about" alt="Image About Example"
-                        width="310">
-                    <img src="assets/img/img-about-2.jpg" class="img-fluid img-about" alt="Image About Example"
-                        width="310">
-                    <img src="assets/img/img-about-3.jpg" class="img-fluid img-about" alt="Image About Example"
-                        width="310">
-                    <img src="assets/img/img-about-1.jpg" class="img-fluid img-about" alt="Image About Example"
-                        width="310">
+                    <img src="assets/img/img-about-1.jpg" class="img-fluid img-about" alt="Image About Example" width="310">
+                    <img src="assets/img/img-about-2.jpg" class="img-fluid img-about" alt="Image About Example" width="310">
+                    <img src="assets/img/img-about-3.jpg" class="img-fluid img-about" alt="Image About Example" width="310">
+                    <img src="assets/img/img-about-1.jpg" class="img-fluid img-about" alt="Image About Example" width="310">
                 </div>
             </div>
         </div>
@@ -51,9 +47,7 @@
                         <h1 class="display-5 title">Why Choose Us</h1>
                     </div>
                     <div class="col-6 d-flex align-items-end">
-                        <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus dolor
-                            sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra velit.
-                        </p>
+                        <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus dolor sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra velit.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -63,8 +57,7 @@
                         </div>
                         <div class="card-description ms-4">
                             <h4 class="featured-title">Best Guides</h4>
-                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.
-                            </p>
+                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.</p>
                         </div>
                     </div>
                     <div class="col-4 d-flex flex-row">
@@ -73,8 +66,7 @@
                         </div>
                         <div class="card-description ms-4">
                             <h4 class="featured-title">Best Guides</h4>
-                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.
-                            </p>
+                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.</p>
                         </div>
                     </div>
                     <div class="col-4 d-flex flex-row">
@@ -83,8 +75,7 @@
                         </div>
                         <div class="card-description ms-4">
                             <h4 class="featured-title">Best Guides</h4>
-                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.
-                            </p>
+                            <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor amet amet.</p>
                         </div>
                     </div>
                 </div>
@@ -103,23 +94,20 @@
             <div class="row">
                 @foreach ($popular_destinations as $item)
                     <div class="col-4">
-                        <a href="/destinations/{{ $item->category_slug }}/{{ $item->slug }}"
-                            class="text-decoration-none">
+                        <a href="/destinations/{{ $item->category_slug }}/{{ $item->slug }}" class="text-decoration-none">
                             <div class="card-content">
                                 <div class="card-image">
-
                                     @if ($item->thumbnail_img)
-                                        <img src="{{ asset('storage/uploads/destinations/thumbnails/' . $item->thumbnail_img) }}"
-                                            class="img-fluid img-popular" alt="Image Example Destination">
-                                    @else
+                                        <img src="{{ asset('storage/uploads/destinations/thumbnails/' . $item->thumbnail_img) }}" class="img-fluid img-popular" alt="Image Example Destination">
+                                    {{-- @else
                                         <img src="https://picsum.photos/200" class="img-fluid w-100"
-                                            alt="Image Example">
+                                            alt="Image Example Destination"> --}}
                                     @endif
                                     <p class="fs-6 price">${{ $item->price }}</p>
                                 </div>
                                 <div class="card-description">
                                     <div class="time d-flex flex-row align-items-center mb-2">
-                                        <i class="fa-regular fa-clock"></i>
+                                        <i class="fa-regular fa-clock"></i> 
                                         <p class="fs-6 d-inline-block m-0 ms-2">3 Days Trip</p>
                                     </div>
                                     <h4 class="title-destination">{{ $item->name }} in {{ $item->location }}</h4>
@@ -198,20 +186,16 @@
             <div class="card-content">
                 <div class="row">
                     <div class="col-3 d-flex align-items-center">
-                        <img src="assets/img/trivago-brand.png" class="img-fluid" alt="Image Partner Example"
-                            width="196">
+                        <img src="assets/img/trivago-brand.png" class="img-fluid" alt="Image Partner Example" width="196">
                     </div>
                     <div class="col-3">
-                        <img src="assets/img/airbnb-brand.png" class="img-fluid" alt="Image Partner Example"
-                            width="188">
+                        <img src="assets/img/airbnb-brand.png" class="img-fluid" alt="Image Partner Example" width="188">
                     </div>
                     <div class="col-3 d-flex align-items-center">
-                        <img src="assets/img/trainline-brand.png" class="img-fluid" alt="Image Partner Example"
-                            width="195">
+                        <img src="assets/img/trainline-brand.png" class="img-fluid" alt="Image Partner Example" width="195">
                     </div>
                     <div class="col-3">
-                        <img src="assets/img/expedia-brand.png" class="img-fluid" alt="Image Partner Example"
-                            width="191">
+                        <img src="assets/img/expedia-brand.png" class="img-fluid" alt="Image Partner Example" width="191">
                     </div>
                 </div>
             </div>
@@ -229,30 +213,24 @@
             <div class="row">
                 <div class="col-4">
                     <div class="card-testimonial text-center">
-                        <img src="assets/img/testimonial-1.png" class="img-fluid img-testimonial mb-4"
-                            alt="Image Testimonial Example">
-                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum
-                            risus vitae ullamcorper tempor.</p>
+                        <img src="assets/img/testimonial-1.png" class="img-fluid img-testimonial mb-4" alt="Image Testimonial Example">
+                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum risus vitae ullamcorper tempor.</p>
                         <h5 class="name-user">Amanda Selvie</h5>
                         <p class="profession-user m-0">Web Designner</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card-testimonial text-center">
-                        <img src="assets/img/testimonial-2.png" class="img-fluid img-testimonial mb-4"
-                            alt="Image Testimonial Example">
-                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum
-                            risus vitae ullamcorper tempor.</p>
+                        <img src="assets/img/testimonial-2.png" class="img-fluid img-testimonial mb-4" alt="Image Testimonial Example">
+                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum risus vitae ullamcorper tempor.</p>
                         <h5 class="name-user">Jasmine Aurell</h5>
                         <p class="profession-user m-0">Model</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="card-testimonial text-center">
-                        <img src="assets/img/testimonial-3.png" class="img-fluid img-testimonial mb-4"
-                            alt="Image Testimonial Example">
-                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum
-                            risus vitae ullamcorper tempor.</p>
+                        <img src="assets/img/testimonial-3.png" class="img-fluid img-testimonial mb-4" alt="Image Testimonial Example">
+                        <p class="fs-6 pb-4 mb-4">Lorem ipsum dolor sit amet cons adip.Ullamcorper tempor, elementum risus vitae ullamcorper tempor.</p>
                         <h5 class="name-user">Taylor Khanedy</h5>
                         <p class="profession-user m-0">Data Analist</p>
                     </div>
@@ -273,22 +251,21 @@
             </div>
             <div class="row">
                 <div class="col-6">
+
                     <form action="" class="card-form d-flex flex-column">
                         <div class="input-merge d-flex flex-row mb-2">
-                            <input type="text" class="input w-50 me-2" placeholder="Name">
-                            <input type="email" class="input w-50" placeholder="Email">
+                            <input type="text" class="input w-50 me-2" placeholder="Name" name="name">
+                            <input type="email" class="input w-50" placeholder="Email" name="email">
                         </div>
-                        <input type="text" class="input mb-2" placeholder="Subject">
-                        <textarea class="input mb-2" rows="5" placeholder="Message"></textarea>
+                        <input type="text" class="input mb-2" placeholder="Subject" name="subject">
+                        <textarea class="input mb-2" rows="5" placeholder="Message" name="message"></textarea>
                         <button type="submit" class="button button-contact">Submit Now</button>
                     </form>
+
                 </div>
                 <div class="col-6">
                     <div class="card-contact">
-                        <p class="fs-6 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus
-                            dolor sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra
-                            velit scelerisque integer. Amet at tempor, eleifend ac. Nunc viverra velit scelerisque
-                            integer.</p>
+                        <p class="fs-6 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus faucibus dolor sapien tincidunt. Lectus dictumst cursus rutrum sit nibh aenean. Tortor, nunc viverra velit scelerisque integer. Amet at tempor, eleifend ac. Nunc viverra velit scelerisque integer.</p>
                         <div class="card-number d-flex flex-row align-items-center mb-3">
                             <div class="icon">
                                 <i class="fa-solid fa-phone"></i>
@@ -321,4 +298,4 @@
             </div>
         </div>
     </section>
-</div>
+@endsection

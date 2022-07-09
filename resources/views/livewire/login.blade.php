@@ -1,4 +1,6 @@
-<div>
+@extends('layout.main')
+
+@section('content')
     <section class="hero-login">
         <div class="row">
             <div class="col-4 form d-flex align-items-center justify-content-center">
@@ -9,21 +11,18 @@
                         @csrf
                         <div class="input-email d-flex flex-column mb-4">
                             <label for="email">Email Address</label>
-                            <input type="email" class="input" name="email" id="email"
-                                placeholder="Enter Your Email"
-                                @if (Cookie::has('useremail')) value="{{ Cookie::get('useremail') }} @endif">
+                            <input type="email" class="input" id="email" placeholder="Enter Your Email" name="email" @if (Cookie::has('useremail')) value="{{ Cookie::get('useremail') }} @endif">
                         </div>
                         <div class="input-password d-flex flex-column mb-4">
                             <label for="password">Password</label>
-                            <input type="password" class="input" name="password" id="password"
-                                placeholder="Enter Your Password">
+                            <input type="password" class="input" id="password" name="password" placeholder="Enter Your Password">
                         </div>
                         <div class="other d-flex flex-row justify-content-between mb-4">
                             <div class="input-remember">
-                                <input type="checkbox" id="remember" name="remember">
+                                <input type="checkbox" id="remember">
                                 <label for="remember">Remember Me</label>
                             </div>
-                            <a href="#" class="fs-6 forgot-password d-inline-block">Forgot Password?</a>
+                            {{-- <a href="#" class="fs-6 forgot-password d-inline-block">Forgot Password?</a> --}}
                         </div>
                         <button type="submit" class="button-signin">Login</button>
                     </form>
@@ -35,4 +34,4 @@
             </div>
         </div>
     </section>
-</div>
+@endsection
