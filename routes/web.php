@@ -38,11 +38,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 
 Route::middleware('guest')->group(function() {
     Route::get('/signup', Signup::class);
-    Route::get('/login', Login::class);
+    Route::get('/login', Login::class)->name('login');
 
     Route::controller(AuthController::class)->group(function() {
         Route::post('/signup', 'store');
-        Route::post('/login', 'login')->name('login');
+        Route::post('/login', 'login');
     });
     
 });

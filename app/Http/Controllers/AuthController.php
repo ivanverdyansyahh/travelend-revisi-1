@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         if($user) {
             // Mail::to($email)->send(new AuthMail($email));
-            return redirect('/signin')->with('message', 'Account created successfully! Please login');
+            return redirect('/login')->with('message', 'Account created successfully! Please login');
         } else {
             return back()->with('message', 'Register failed');
         }

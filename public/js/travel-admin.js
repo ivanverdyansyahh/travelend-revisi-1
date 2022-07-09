@@ -9,8 +9,8 @@ $(document).ready(function() {
 
                 $('#edit-form').attr('action', `/destinations/${destinations.id}`)
 
-                $('#edit-thumbnail-img').attr('src', '/uploads/destinations/thumbnails/' + destinations.thumbnail_img)
-                $('#edit-hero-img').attr('src', '/uploads/destinations/heros/' + destinations.hero_img)
+                $('#edit-thumbnail-img').attr('src', '/storage/uploads/destinations/thumbnails/' + destinations.thumbnail_img)
+                $('#edit-hero-img').attr('src', '/storage/uploads/destinations/heros/' + destinations.hero_img)
 
                 $('#edit-name').val(destinations.name)
                 $('#edit-fact').val(destinations.fact)
@@ -58,10 +58,7 @@ $(document).ready(function() {
             success: ({ categories }) => {
 
                 $('#edit-form-category').attr('action', `/categories/${categories.id}`)
-                $('#edit-thumbnail-img-category').attr('src', '/uploads/categories/thumbnails/' + categories.thumbnail)
-
-                $('#edit-name-category').val(categories.name)                
-                $('#edit-description-category').html(categories.description)                
+                $('#edit-name-category').val(categories.name)            
             }
         })
     })

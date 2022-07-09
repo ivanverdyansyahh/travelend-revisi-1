@@ -15,13 +15,23 @@
 
 <body id="home">
 
-    @include('partials.navbar')
+    @if (Request::is('login'))
+        <main>
+            {{ $slot }}
+        </main>
+    @elseif(Request::is('signup'))
+        <main>
+            {{ $slot }}
+        </main>
+    @else
+        @include('partials.navbar')
 
-    <main>
-        {{ $slot }}
-    </main>
+        <main>
+            {{ $slot }}
+        </main>
 
-    @include('partials.footer')
+        @include('partials.footer')
+    @endif
 
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

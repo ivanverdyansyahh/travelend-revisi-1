@@ -120,32 +120,30 @@
                     <h4 class="fs-4 title">Description</h4>
                     <p class="fs-6 mt-4">{!! $destination->description !!}</p>
 
-                    <h4 class="fs-4 title mt-5">Give Feedback</h4>
-                    <form action="/reviews" method="POST">
-                        @csrf
-                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                        <input type="hidden" name="destination_id" value="{{ $destination->id }}">
+                    @if (auth()->user()->role_as === 'user')
+                        <h4 class="fs-4 title mt-5">Give Feedback</h4>
+                        <form action="/reviews" method="POST">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                            <input type="hidden" name="destination_id" value="{{ $destination->id }}">
 
-                        <input type="text" class="input mb-2" placeholder="Name">
-                        <input type="text" class="input mb-2" placeholder="Email">
+                            <input type="text" class="input mb-2" value="{{ auth()->user()->username }}"
+                                placeholder="Name">
+                            <input type="text" class="input mb-2" value="{{ auth()->user()->email }}"
+                                placeholder="Email">
 
-                        <div>
-                            <input type="checkbox" name="rating" value="1">
-                            <input type="checkbox" name="rating" value="2">
-                            <input type="checkbox" name="rating" value="3">
-                            <input type="checkbox" name="rating" value="4">
-                            <input type="checkbox" name="rating" value="5">
-                        </div>
-
-                        <button type="submit" class="button">Submit Now</button>
-                    </form>
+                            <button type="submit" class="button">Submit Now</button>
+                        </form>
+                    @endif
                 </div>
                 <div class="col-4">
                     <div class="card-order">
                         <h4 class="fs-4">Start From</h4>
                         <h1 class="display-6 price">${{ $destination->price }}</h1>
-                        <button type="button" class="button w-100" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Order Ticket Now</button>
+                        @if (auth()->user()->role_as === 'user')
+                            <button type="button" class="button w-100" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Order Ticket Now</button>
+                        @endif
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">

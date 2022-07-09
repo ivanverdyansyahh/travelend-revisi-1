@@ -1,50 +1,47 @@
 @extends('admin.layouts.main')
 
 @section('content')
-    <div class="card shadow mb-4">
-        <div class="d-flex justify-content-between card-header py-3">
-            <h6 class="mt-2 font-weight-bold text-primary">List Categories Table</h6>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#createCategoryModal"><i
-                    class="fas fa-plus"></i> Create</button>
+    <div class="shadow data_table">
+        <div class="d-flex justify-content-between mb-3">
+            <div id="example_wrapper"></div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCategoryModal">Create</button>
         </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="40%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Destinations</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Destinations</th>
-                            <th>Action</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        @foreach ($categories as $category)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $category->name }}</td>
-                                <td class="text-center">{{ $category->destinations->count() }}</td>
-                                <td class="d-flex justify-content-around">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#editCategoryModal"
-                                        value="{{ $category->id }}" class="btn edit-category"><i
-                                            class="fas fa-pencil"></i></button>
-                                    <button type="button" class="btn btn-delete" value="{{ $category->id }}"><i
-                                            class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <table id="example" class="display table table-hover" style="width:60%">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Destinations</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($categories as $item)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td class="text-center">{{ $item->destinations->count() }}</td>
+                        <td class="d-flex">
+                            <button class="btn btn-warning m-2 edit-category" data-bs-toggle="modal"
+                                data-bs-target="#editCategoryModal" value="{{ $item->id }}">
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button class="btn btn-danger m-2 btn-delete" value="{{ $item->id }}">
+                                <i class="fa-solid fa-trash text-white"></i>
+                            </button>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Destinations</th>
+                    <th>Action</th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 
     @include('admin.components.create-category-modal')

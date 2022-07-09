@@ -212,14 +212,16 @@
                 @endforeach
             </div>
             <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <a href="#" class="button {{ $isAllLoaded ? 'd-none' : '' }}"
-                        wire:click.prevent="loadMore">View More</a>
+                @if (!request('category') && !request('search'))
+                    <div class="col-12 text-center">
+                        <a href="#" class="button {{ $isAllLoaded ? 'd-none' : '' }}"
+                            wire:click.prevent="loadMore">View More</a>
 
-                    @if ($perPage > $destinations->count())
-                        <p>No more pages to load</p>
-                    @endif
-                </div>
+                        @if ($perPage > $destinations->count())
+                            <p>No more pages to load</p>
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
     </section>

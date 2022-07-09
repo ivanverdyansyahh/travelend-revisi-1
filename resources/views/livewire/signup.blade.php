@@ -5,18 +5,22 @@
                 <div class="card-content p-5">
                     <h1 class="title text-start mb-1">Sign <span class="highlight">Up</span></h1>
                     <p class="fs-6 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit .</p>
-                    <form action="" class="form-signup mb-5">
+                    <form action="/signup" method="POST" class="form-signup mb-5">
+                        @csrf
                         <div class="input-username d-flex flex-column mb-4">
                             <label for="username">Username</label>
-                            <input type="text" class="input" id="username" placeholder="Enter Your Username">
+                            <input type="text" class="input" name="username" id="username"
+                                placeholder="Enter Your Username">
                         </div>
                         <div class="input-email d-flex flex-column mb-4">
                             <label for="email">Email Address</label>
-                            <input type="email" class="input" id="email" placeholder="Enter Your Email">
+                            <input type="email" class="input" name="email" id="email"
+                                placeholder="Enter Your Email">
                         </div>
                         <div class="input-password d-flex flex-column mb-4">
                             <label for="password">Password</label>
-                            <input type="password" class="input" id="password" placeholder="Enter Your Password">
+                            <input type="password" class="input" name="password" id="password"
+                                placeholder="Enter Your Password">
                         </div>
                         <div class="input-remember d-flex flex-row justify-content-between mb-4">
                             <input type="checkbox" id="remember">

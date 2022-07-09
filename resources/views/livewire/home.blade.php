@@ -184,18 +184,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4"><img src="assets/img/img-gallery-1.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
-                <div class="col-4"><img src="assets/img/img-gallery-2.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
-                <div class="col-4"><img src="assets/img/img-gallery-3.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
-                <div class="col-4"><img src="assets/img/img-gallery-3.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
-                <div class="col-4"><img src="assets/img/img-gallery-2.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
-                <div class="col-4"><img src="assets/img/img-gallery-1.jpg" class="img-fluid img-gallery mt-4"
-                        alt="Image Gallery Example"></div>
+                @foreach ($tour_gallery as $item)
+                    <div class="col-4"><img
+                            src="{{ asset('storage/uploads/destinations/thumbnails/' . $item->thumbnail_img) }}"
+                            class="img-fluid img-gallery mt-4" alt="Image Gallery Example"></div>
+                @endforeach
             </div>
         </div>
     </section>

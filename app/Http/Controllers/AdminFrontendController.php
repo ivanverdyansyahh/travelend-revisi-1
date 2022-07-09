@@ -16,8 +16,7 @@ class AdminFrontendController extends Controller
         $get_month = \Carbon\Carbon::today()->subDays(30);
 
         $title = 'Dashboard';
-        $destinations_count = Destination::all()->count();
-        $categories_count = Category::all()->count();
+        $latest_orders = Order::latest()->with('destination')->limit(2)->get();
         $orders_count = Order::where('created_at', '>=', $get_week)->count();
         $income_orders = Order::where('created_at', '>=', $get_month)->get();
 
@@ -26,7 +25,7 @@ class AdminFrontendController extends Controller
             $income_total += $item->total_price;
         }
         
-        return view('admin.pages.dashboard', compact('title', 'destinations_count', 'categories_count', 'orders_count', 'income_total'));
+        return view('admin.pages.dashboard', compact('title', 'latest_orders', 'orders_count', 'income_total'));
     }
 
     public function destinationsView()
